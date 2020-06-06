@@ -37,7 +37,7 @@ import { AuthGuard } from './services/auth.guard';
         ])
     ],
     exports: [RouterModule],
-    providers: [AuthService, AuthGuard]
+    providers: [AuthGuard]
 })
 
 export class AdminModule{
