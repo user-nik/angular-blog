@@ -3,6 +3,18 @@
         SignIn to Admin console
     </h2>
 
+    <div class="alert alert-danger"
+    *ngIf="auth.error$ | async as error"
+    >
+    {{error}}
+    </div>
+
+    <div class="alert alert-info"
+    *ngIf="message"
+    >
+    {{message}}
+    </div>
+
     <div class="form-control" 
     [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}">
         <label for="email">Email:</label>
@@ -29,8 +41,10 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary" 
-    [disabled]="form.invalid"
+    <button 
+    type="submit" 
+    class="btn btn-primary" 
+    [disabled]="form.invalid || submitted"
     >
         SignIn
     </button>
