@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
+import ruLocale from '@angular/common/locales/ru';
 import { RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -12,6 +13,8 @@ import { AuthGuard } from './services/auth.guard';
 import { SearchPipe } from './search.pipe';
 import { AlertComponent } from './components/alert/alert.component';
 import { AlertService } from './services/alert.service';
+
+registerLocaleData(ruLocale, 'ru')
 
 @NgModule({
     declarations: [
